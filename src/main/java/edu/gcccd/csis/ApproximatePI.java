@@ -14,10 +14,8 @@ public class ApproximatePI {
             if (x * x + y * y <= 1)
                 totalSuccess++;
         }
-
-    // It takes my computer about 30 seconds to send the println. Your computer might be different.
-            System.out.println("Approximation of PI = " + 4 * (double) totalSuccess / (double) totalTries);
-
+        // It takes my computer about 30 seconds to send the println. Your computer might be different.
+        System.out.println("Approximation of PI = " + 4 * (double) totalSuccess / (double) totalTries);
         }
     }
 
