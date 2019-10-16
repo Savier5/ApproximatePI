@@ -1,19 +1,26 @@
-import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
-import org.junit.runner.RunWith;
+package edu.gcccd.csis;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
-@RunWith(Arquillian.class)
 public class ApproximatePITest {
-    @Deployment
-    public static JavaArchive createDeployment() {
-        return ShrinkWrap.create(JavaArchive.class)
-                .addClass(edu.gcccd.csis.ApproximatePI.class)
-                .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+
+    @Test
+    public void main() {
+            int i;
+            int totalTries = 0;
+            int totalSuccess = 0;
+            double x, y;
+            for (i = 0; i < 1000000000; i++) {
+
+                x = (Math.random());
+                y = (Math.random());
+                totalTries++;
+                if (x * x + y * y <= 1)
+                    totalSuccess++;
+            }
+            // It takes my computer about 30 seconds to send the println. Your computer might be different.
+            System.out.println("Approximation of PI = " + 4 * (double) totalSuccess / (double) totalTries);
+
+        }
     }
 
-}
