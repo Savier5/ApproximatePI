@@ -15,5 +15,9 @@ public class ApproximatePI {
                 totalSuccess++;
         }
 
+    // It takes my computer about 30 seconds to send the println. Your computer might be different.
+            System.out.println("Approximation of PI = " + 4 * (double) totalSuccess / (double) totalTries);
+
+        }
     }
-}
+
